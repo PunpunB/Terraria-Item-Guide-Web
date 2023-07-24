@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="top">
+        <img src="Tree.webp" alt="">
+        <h1>Terraria Item Guide</h1>
+        <p>This Website contain a database on the recommend gear you could use against each bosses to progress in your game</p>
+        <a href="#database" class="btn" id="scroll-down" style="font-size: large;">Start using</a>
+        <div class="background">
+            <img src="bg.jpg" width="100%">
+        </div>
+    </div>
+    <div id="database">
+        <form>
+            <div id="boss-pick">
+                <h2>Pick</h2>
+                <label for="boss-name">Choose a bosses:</label>
+                <select name="boss-name" id="boss-name" style="font-size: x-large;">
+                    <option value="any">Any</option>
+                    <option value="eoc">Eye of Cthulhu</option>
+                    <option value="eow">Eater of Worlds</option>
+                    <option value="boc">Brain of Cthulhu</option>
+                    <option value="queen-bee">Queen bee</option>
+                    <option value="skeletron">Skeletron</option>
+                    <option value="wof">Wall of flesh</option>
+                    <option value="the-twins">The Twins</option>
+                    <option value="the-destroyer">The Destroyer</option>
+                    <option value="skeletron-prime">Skeletron prime</option>
+                    <option value="plantera">Plantera</option>
+                    <option value="golem">Golem</option>
+                    <option value="lunatic-cultist">Lunatic Cultist</option>
+                    <option value="the-moon-lord">The Moon Lord</option>
+                </select>
+                <script>
+                    let bosspick = document.getElementById('boss-name');
+                    bosspick.onchange = (ev) =>{
+                    console.log("Selected boss is: " + bosspick.value);
+                    }
+                </script>
+            </div>
+
+            <p></p>
+
+            <div id="class-pick">
+                <label for="class-name">Choose a class</label>
+                <select name="class-name" id="class-name" style="font-size: x-large;">
+                    <option value="any">Any</option>
+                    <option value="melee">Melee</option>
+                    <option value="mage">Mage</option>
+                    <option value="ranger">Ranger</option>
+                    <option value="summoner">Summoner</option>
+                </select>
+                <script>
+                    let classpick = document.getElementById('class-name');
+                    classpick.onchange = (ev) =>{
+                    console.log("Selected class is: " + classpick.value);
+                    }
+                </script>
+            </div>
+
+            <div>
+                <button type="submit" value="Search" class="search" style="margin-left: 50px; font-size: larger;">Search</button>
+            </div>
+        </form>
+    </div>
+</body>
