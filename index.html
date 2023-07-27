@@ -12,62 +12,70 @@
         <img src="Tree.webp" alt="">
         <h1>Terraria Item Guide</h1>
         <p>This Website contain a database on the recommend gear you could use against each bosses to progress in your game</p>
-        <a href="#database" class="btn" id="scroll-down" style="font-size: large;">Start using</a>
+        <a href="#database" class="btn" id="scroll-down" style="font-size: large;">Start</a>
         <div class="background">
             <img src="bg.jpg" width="100%">
         </div>
     </div>
     <div id="database">
-        <form>
-            <div id="boss-pick">
-                <h2>Pick</h2>
-                <label for="boss-name">Choose a bosses:</label>
-                <select name="boss-name" id="boss-name" style="font-size: x-large;">
-                    <option value="any">Any</option>
-                    <option value="eoc">Eye of Cthulhu</option>
-                    <option value="eow">Eater of Worlds</option>
-                    <option value="boc">Brain of Cthulhu</option>
-                    <option value="queen-bee">Queen bee</option>
-                    <option value="skeletron">Skeletron</option>
-                    <option value="wof">Wall of flesh</option>
-                    <option value="the-twins">The Twins</option>
-                    <option value="the-destroyer">The Destroyer</option>
-                    <option value="skeletron-prime">Skeletron prime</option>
-                    <option value="plantera">Plantera</option>
-                    <option value="golem">Golem</option>
-                    <option value="lunatic-cultist">Lunatic Cultist</option>
-                    <option value="the-moon-lord">The Moon Lord</option>
-                </select>
-                <script>
-                    let bosspick = document.getElementById('boss-name');
-                    bosspick.onchange = (ev) =>{
-                    console.log("Selected boss is: " + bosspick.value);
-                    }
-                </script>
-            </div>
+        <div id="boss-pick">
+            <h2>Pick</h2>
+            <label for="boss-name">Choose a bosses:</label>
+            <select name="boss-name" id="boss-name" style="font-size: x-large;">
+                <option value="eoc">Eye of Cthulhu</option>
+                <option value="eow">Eater of Worlds</option>
+                <option value="boc">Brain of Cthulhu</option>
+                <option value="queenbee">Queen bee</option>
+                <option value="skeletron">Skeletron</option>
+                <option value="wof">Wall of flesh</option>
+                <option value="thetwins">The Twins</option>
+                <option value="thedestroyer">The Destroyer</option>
+                <option value="skeletronprime">Skeletron prime</option>
+                <option value="plantera">Plantera</option>
+                <option value="golem">Golem</option>
+                <option value="lunaticcultist">Lunatic Cultist</option>
+                <option value="themoonlord">The Moon Lord</option>
+            </select>
+            <script>
+                let bosspick = document.getElementById('boss-name');
+                bosspick.onchange = (ev) =>{
+                console.log("Selected boss is: " + bosspick.value);
+                }
+            </script>
+        </div>
 
-            <p></p>
+        <p></p>
 
-            <div id="class-pick">
-                <label for="class-name">Choose a class</label>
-                <select name="class-name" id="class-name" style="font-size: x-large;">
-                    <option value="any">Any</option>
-                    <option value="melee">Melee</option>
-                    <option value="mage">Mage</option>
-                    <option value="ranger">Ranger</option>
-                    <option value="summoner">Summoner</option>
-                </select>
-                <script>
-                    let classpick = document.getElementById('class-name');
-                    classpick.onchange = (ev) =>{
-                    console.log("Selected class is: " + classpick.value);
-                    }
-                </script>
-            </div>
-
-            <div>
-                <button type="submit" value="Search" class="search" style="margin-left: 50px; font-size: larger;">Search</button>
-            </div>
-        </form>
+        <div id="class-pick">
+            <label for="class-name">Choose a class</label>
+            <select name="class-name" id="class-name" style="font-size: x-large;">
+                <option value="melee">Melee</option>
+                <option value="mage">Mage</option>
+                <option value="ranger">Ranger</option>
+                <option value="summoner">Summoner</option>
+            </select>
+            <script>
+                let classpick = document.getElementById('class-name');
+                classpick.onchange = (ev) =>{
+                console.log("Selected class is: " + classpick.value);
+                }
+            </script>
+        
+            <img src="Tree.webp" id="image" style="height: 500px;">
+            <button type="button" class="btn" style="margin-left: 50px; font-size: larger;" onclick="changeimg()">Search Build</button>
+            <script>
+                function changeimg()
+                {
+                    var img = document.getElementById('image');
+                    var chosenboss = document.getElementById('boss-name');
+                    var chosenclass = document.getElementById('class-name');
+                    var selected = ('dataimg/' + chosenboss.value + '/' + chosenclass.value + '.png');
+                    img.src = selected;
+                    console.log(selected);
+                    console.log(chosenclass.value);
+                    console.log(chosenboss.value);
+                } 
+            </script>
+        </div>
     </div>
 </body>
