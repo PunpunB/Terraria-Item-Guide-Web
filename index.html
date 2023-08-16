@@ -8,6 +8,44 @@
    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <p></p>
+    <div class="navigation">
+        <ul>
+            <li class="list active">
+                <a href="#">
+                    <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
+                    <span class="text">Home</span>
+                </a>
+            </li>
+            <li class="list">
+                <a href="#">
+                    <span class="icon"><ion-icon name="list-outline"></ion-icon></span>
+                    <span class="text">Every Set</span>
+                </a>
+            </li>
+            <li class="list">
+                <a href="#">
+                    <span class="icon"><ion-icon name="search-circle-outline"></ion-icon></span>
+                    <span class="text">Recipe</span>
+                </a>
+            </li>
+            <div class="indicator"></div>
+        </ul>
+    </div>
+
+    <script>
+        const list = document.querySelectorAll('.list');
+        function activeLink(){
+            list.forEach((item) =>
+            item.classList.remove('active'));
+            this.classList.add('active');
+        }
+        list.forEach((item) =>
+        item.addEventListener('click',activeLink));
+    </script>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <div class="top">
         <img src="Tree.webp" alt="">
         <h1>Terraria Item Guide</h1>
@@ -61,7 +99,7 @@
                 }
             </script>
         
-            <img src="Tree.webp" id="image" style="height: 500px;">
+            <img src="Tree.webp" id="image" style="height: 450px;">
             <button type="button" class="btn" style="margin-left: 50px; font-size: larger;" onclick="changeimg()">Search Build</button>
             <script>
                 function changeimg()
