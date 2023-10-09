@@ -204,7 +204,8 @@ label{
     font-size: 22px;
     padding: 0 20px;
     border-radius: 7px;
-    background: #4ac6ff;
+    background: #2f00bd;
+    color: #ffffff;
     justify-content: space-between;
 }
 .select-btn i{
@@ -219,7 +220,7 @@ label{
     margin-top: 15px;
     padding: 20px;
     border-radius: 7px;
-    background: #4ac6ff;
+    background: #2f00bd;
 }
 .wrapper.active .content{
     display: block;
@@ -264,7 +265,8 @@ label{
     padding: 0 13px;
     font-size: 21px;
     border-radius: 5px;
+    background: #ffffff;
 }
 .options li:hover, li.selected{
-    background: #00ff8c;
+    background: #14e6c3;
 }

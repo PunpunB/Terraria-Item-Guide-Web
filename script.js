@@ -3,7 +3,7 @@ selectBtn = wrapper.querySelector(".select-btn"),
 searchInp = wrapper.querySelector("input"),
 options = wrapper.querySelector(".options");
 
-let countries = ["Afghanistan", "Algeria", "Argentina", "Australia", "Bangladesh", "Belgium", "Bhutan",
+let countries = ["Blade of Grass", "Platinum Armour", "Argentina", "Australia", "Bangladesh", "Belgium", "Bhutan",
                  "Brazil", "Canada", "China", "Denmark", "Ethiopia", "Finland", "France", "Germany",
                  "Hungary", "Iceland", "India", "Indonesia", "Iran", "Italy", "Japan", "Malaysia",
                  "Maldives", "Mexico", "Morocco", "Nepal", "Netherlands", "Nigeria", "Norway", "Pakistan",
@@ -25,6 +25,12 @@ function updateName(selectedLi) {
     addCountry(selectedLi.innerText);
     wrapper.classList.remove("active");
     selectBtn.firstElementChild.innerText = selectedLi.innerText;
+    var chosen = (selectedLi.innerText).toLowerCase()
+    console.log(chosen);
+    console.log('chosen image is ' + chosen)
+    var img = document.getElementById('Image')
+    var selected = ('recipe/' + chosen + '.png');
+    img.src = selected;
 }
 
 searchInp.addEventListener("keyup", () => {
